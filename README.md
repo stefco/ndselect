@@ -17,3 +17,21 @@ nds_query \
     -d 1 \
     -l 'H1:SYS-TIMING*'
 ```
+
+Get the prefixes to the LLO channels with:
+
+```bash
+sed -n '/^L/s/-/ /gp' llo-channels-post-er13.txt \
+    | awk '{ print $1 }' \
+    | sort \
+    | uniq >llo-channels-post-er13-start.txt
+```
+
+Same for LHO:
+
+```bash
+sed -n '/^H/s/-/ /gp' lho-channels-post-er13.txt \
+    | awk '{ print $1 }' \
+    | sort \
+    | uniq >lho-channels-post-er13-start.txt
+```
