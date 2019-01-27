@@ -158,7 +158,7 @@
    </property>
    <column>
     <property name="text">
-     <string notr="true">1</string>
+     <string notr="true">Partial Channel Names (Click to Expand)</string>
     </property>
    </column>
   </widget>

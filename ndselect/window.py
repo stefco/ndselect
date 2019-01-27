@@ -50,7 +50,7 @@ class Ui_Dialog(object):
         self.treeWidget = QtWidgets.QTreeWidget(Dialog)
         self.treeWidget.setGeometry(QtCore.QRect(10, 10, 541, 241))
         self.treeWidget.setObjectName("treeWidget")
-        self.treeWidget.headerItem().setText(0, "1")
+        self.treeWidget.headerItem().setText(0, "Partial Channel Names (Click to Expand)")
         self.pushButton = QtWidgets.QPushButton(Dialog)
         self.pushButton.setGeometry(QtCore.QRect(390, 260, 81, 21))
         self.pushButton.setObjectName("pushButton")
