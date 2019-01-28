@@ -11,6 +11,9 @@ import sys
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QTreeWidget, QTreeWidgetItem, QApplication, QWidget
 from window import Ui_Dialog
+from xdg.BaseDirectory import save_cache_path
+
+CACHE_ROOT = save_cache_path('ndselect')
 
 TOP_LEVEL_CHANNELS = {
     'LLO': (
@@ -97,16 +100,3 @@ def top_level_channel_widgets():
         for top_level_channel in TOP_LEVEL_CHANNELS[obs]:
             obs_widget.addChild(QTreeWidgetItem([top_level_channel]))
     return obs_widgets
-
-
-def main():
-    app = QtWidgets.QApplication(sys.argv)
-    ex = Browser()
-    # from https://stackoverflow.com/questions/41204234/python-pyqt5-qtreewidget-sub-item
-    for tlw in top_level_channel_widgets().values():
-        ex.ui.treeWidget.addTopLevelItem(tlw)
-    sys.exit(app.exec_())
-
-
-if __name__ == '__main__':
-    main()
